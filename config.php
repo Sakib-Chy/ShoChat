@@ -3,7 +3,7 @@ session_start();
 $host = 'localhost';
 $db   = 'ShoChat';
 $user = 'root';
-$pass = 'ShoJack(120)';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
