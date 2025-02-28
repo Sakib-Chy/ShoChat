@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoChat - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Responsive styles */
+        .container { max-width: 400px; margin: auto; padding: 20px; }
+        .form-toggle { display: flex; justify-content: space-between; }
+        .form-section { display: none; }
+        .active { display: block; }
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <div class="form-toggle">
+                <button class="active" onclick="showForm('login')">Login</button>
+                <button onclick="showForm('register')">Register</button>
+            </div>
+
+            <form id="loginForm" class="form-section active" action="auth.php" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" name="login">Login</button>
+            </form>
+
+            <form id="registerForm" class="form-section" action="auth.php" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" name="register">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll('.form-section').forEach(form => form.classList.remove('active'));
+            document.getElementById(formId + 'Form').classList.add('active');
+        }
+    </script>
+</body>
+</html>
